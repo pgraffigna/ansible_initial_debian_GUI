@@ -1,0 +1,5 @@
+---
+- name: Descargar e instalar ulauncher 
+  apt:
+    deb: "{{ deb }}"
+      

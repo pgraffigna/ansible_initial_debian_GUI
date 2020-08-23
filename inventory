@@ -1,0 +1,6 @@
+[parrot]
+192.168.0.3
+
+[parrot:vars]
+ansible_ssh_user=USER
+ansible_ssh_pass=PASS

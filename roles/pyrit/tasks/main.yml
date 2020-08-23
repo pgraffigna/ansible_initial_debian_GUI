@@ -1,0 +1,4 @@
+---
+- name: Descarga e instala pyrit
+  apt:
+    deb: "{{ deb }}"

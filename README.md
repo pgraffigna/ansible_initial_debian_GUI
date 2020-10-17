@@ -1,6 +1,6 @@
 # ansible_initial_debian_GUI
 
-Playbook con configuración inicial para equipos con Debian (GUI)
+Playbook con configuración inicial para equipos con Debian 
 
 roles:	 
 - tmux
@@ -10,4 +10,4 @@ roles:
 - pyrit
 - vagrant
 - ulauncher
-- vbox_additions
+- vbox

@@ -7,7 +7,7 @@
 
 - name: Instalación de paquetes
   apt: 
-    name: ['tmux', 'gawk', 'perl', 'sed']
+    name: ['git','tmux', 'gawk', 'perl', 'sed']
 
 - name: Clona el repo
   git:
@@ -23,12 +23,12 @@
     state: link    
     follow: false
 
-- name: Copia archivo de configuración
+- name: Copia archivos de configuración
   shell: | 
     cp /opt/.tmux.git/.tmux.conf.local "{{ home }}/.tmux.conf.local"      
     chown "{{ user }}":"{{ user }}" "{{ home }}/.tmux.conf.local"
 
-- name: Inserta línea al final del archivo
+- name: Inserta líneas al final del archivo
   blockinfile:
     path: "{{ home }}/.tmux.conf"
     block: | 

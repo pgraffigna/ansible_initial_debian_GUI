@@ -1,14 +1,14 @@
 ---
-- hosts: HOSTS
+- hosts: debian
   become: yes
   
   roles:	 
     - tmux
     - nano
     - brave
-    - git
     - pyrit
     - vagrant
     - ulauncher
-    - vbox_additions
+    - vbox
+    
     

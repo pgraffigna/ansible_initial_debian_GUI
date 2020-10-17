@@ -1,0 +1,37 @@
+---
+- name: Importar la llave
+  apt_key:
+    url: "{{ item }}" 
+    state: present
+  with_items:
+    - "{{ llave }}"
+    - "{{ llave_2016 }}"
+
+- name: Agregar repo
+  apt_repository:
+    repo: deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian buster contrib
+    state: present
+    
+- name: Instalar virtualbox
+  apt:
+    name: "{{ paquete }}"
+    state: present
+    update_cache: yes
+    
+- name: Descargar virtualbox extensión pack
+  get_url:
+    url: "https://download.virtualbox.org/virtualbox/{{ version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ version }}.vbox-extpack"
+    dest: /tmp/
+    force: yes    
+
+- name: Instalación VirtualBox extension pack
+  shell: "echo 'y' | VBoxManage extpack install /tmp/Oracle_VM_VirtualBox_Extension_Pack-{{ version }}.vbox-extpack"
+
+- name: Asegurar que los módulos de vbox se cargaron
+  modprobe:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - vboxnetadp
+    - vboxnetflt
+    - vboxdrv

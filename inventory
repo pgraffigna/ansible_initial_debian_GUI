@@ -1,6 +1,5 @@
-[parrot]
-192.168.0.3
+[debian]
+192.168.0.2
 
-[parrot:vars]
-ansible_ssh_user=USER
-ansible_ssh_pass=PASS
+[debian:vars]
+ansible_user=quentin

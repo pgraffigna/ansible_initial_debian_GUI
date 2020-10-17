@@ -1,0 +1,5 @@
+---
+paquete: virtualbox-6.0
+llave: https://www.virtualbox.org/download/oracle_vbox.asc
+llave_2016: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+version: 6.0.10

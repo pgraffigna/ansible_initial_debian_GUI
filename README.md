@@ -6,7 +6,6 @@ roles:
 - tmux
 - nano
 - brave
-- git
 - pyrit
 - vagrant
 - ulauncher

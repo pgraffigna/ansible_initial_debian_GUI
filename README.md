@@ -11,3 +11,5 @@ roles:
 - vagrant
 - ulauncher
 - vbox
+- woeusb
+- oh my bash

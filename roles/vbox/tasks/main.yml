@@ -26,12 +26,3 @@
 
 - name: Instalación VirtualBox extension pack
   shell: "echo 'y' | VBoxManage extpack install /tmp/Oracle_VM_VirtualBox_Extension_Pack-{{ version }}.vbox-extpack"
-
-- name: Asegurar que los módulos de vbox se cargaron
-  modprobe:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - vboxnetadp
-    - vboxnetflt
-    - vboxdrv
